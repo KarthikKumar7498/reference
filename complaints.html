@@ -3,6 +3,7 @@
 <head>
     <title>Complaints</title>
     <link rel="stylesheet" href="task3.css">
+    <link rel="stylesheet" href="complaints.css">
 </head>
 <body>
     <header>
@@ -19,31 +20,51 @@
             </ul>
         </nav>
     </header>
-    <form action="javascript:void(0);" method="POST" onsubmit="app.Add()"> 
-        <input type="text" id="add-name" placeholder="New country">
-        <input type="submit" value="Add">
+    
+    
+    <form id="complaintForm" autocomplete="off" required>
+        
+        <div id="complaintForm">
+            
+            
+            Fullname:
+            <input type=text name=name>
+            <br>
+            Phone Number:
+            <input type=number name=phno>
+            <br>
+            Address:
+            <input type=text name=address>
+            <br>
+            Area:
+            <input type=text name=area>
+            <br>
+            <input type="text" id="addname" placeholder="New complaint">
+        </div>
     </form>
-    
-    <div id="spoiler" role="aria-hidden">
-        <form action="javascript:void(0);" method="POST" id="saveEdit">
-            <input type="text" id="edit-name">
-            <input type="submit" value="Edit" /> <a onclick="CloseInput()" aria-label="Close">&#10006;</a>
-        </form>
-    </div>
-    
-    <p id="counter"></p>
-    
+
+    <button  onclick="app.Add()">ADD</button>
+    <button onclick="localStorage.removeItem('addname');addname.value=''">CLEAR</button>
+    <button class=savebutton onclick=SaveItem()>SAVE</button>
+
     <table>
-        <tr>
-            <th>COMPLAINTS LIST</th>
-        </tr>
-        <tbody id="complaints">
-        </tbody>
+            <tr>
+                <th>COMPLAINTS LIST</th>
+            </tr>
+            <tbody id="complaints">
+            </tbody>
     </table>
-    <textarea style="width:200px; height: 60px;" id="area" placeholder="Write here"></textarea>
-    <br>
-    <button onclick="localStorage.removeItem('area');area.value=''">Clear</button>
+
+    <div id="spoiler" role="aria-hidden">
+            <form action="javascript:void(0);" method="POST" id="saveEdit">
+                <input type="text" id="edit-name"></input>
+                <input type="submit" value="Edit"></input>
+            </form>
+    </div>
+        <p id="counter"></p>
+   
 </div>
 </body>
 <script src="task.js"></script>
 </html>
+
