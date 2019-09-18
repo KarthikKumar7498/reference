@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        CRUD 
+    </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>UBUY Electronics</h1>
+  <input type="text" id="myInput" onkeyup="search()" placeholder="Search for Commodity names or Description or Category.." title="Type in a name">
+  <br><button id="undo" onclick="undo()">undo</button> 
+  <button id="del" onclick="deleteRow()">Delete</button>
+  <button id="select" name="chk" onclick="selectAll()">Select All</button>
+  <button id="deselect" name="chk" onclick="deselectAll()">Deselect All</button>
+  <select name="entry" id="ent" onchange="pagecustom()">
+    <option value=" "> </option>
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+    <option value="20">20</option>
+  </select>
+  
+  
+  
+    <table class="entry" id="input">
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label>Commodity Name</label>
+                        <input type="text" name="commodityname" id="commodityname">
+                    </div>
+                    <div>
+                        <label>Description</label>
+                        <input type="text" name="description" id="description">
+                    </div>
+                    <div>
+                        <label>Price</label>
+                        <input type="number" name="price" id="price">
+                    </div>
+                    <div>
+                        <label>Category</label>
+                        <select name="category" id="category">
+                                <option value="Laptop">Laptop</option>
+                                <option value="Phone">Phone</option>
+                                <option value="Tablet">Tablet</option>
+                        </select>
+                    </div>
+                    <div class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            </tr>
+       
+           
+    </table>
+                <table class="list" id="gadgetlist">
+                        
+                    <thead>
+                            
+                        <tr>
+                            <th>Commodity Name</th>
+                            <th>Description</th>
+                            <th>Price(Rs)</th>
+                            <th>Category</th>
+                            <th>Action</th>
+                            <th>Select<br></th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                            
+                    </tbody>
+                   
+        </table>
+        <div id="pageNavPosition" style="padding-top: 20px" align="center">
+        </div>
+        
+
+      
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closemod()">&times;</span>
+            <h3 id="cname1">COMMODITY NAME<br></h3>
+            <h4 id="cname"><br></h4>
+            <h3 id="descp1">DESCRIPTION<br></h3>
+            <h4 id="descp"><br></h4>
+            <h3 id="pric1">PRICE(Rs)<br></h3>
+            <h4 id="pric"><br></h4>
+            <h3 id="categ1">CATEGORY<br></h3>
+            <h4 id="categ"><br></h4>
+          </div>
+        
+        </div>
+        
+      
+    <script src="script.js"></script>
+   
+</body>
+
+</html>
