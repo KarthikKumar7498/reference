@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complaints</title>
+    <link rel="stylesheet" href="task3.css">
+</head>
+<body>
+    <header>
+        
+        <nav>
+            <ul class="nav_links">
+                <li><a href="task3.html"><b>HOME</b></a></li>
+                <li><a href="complaints.html"><b>COMPLAINTS</b></a></li>
+                <li><a href="status.html"><b>TRACK STATUS</b></a></li>
+                <li><a href="policestation.html"><b>STATIONS</b></a></li>
+                <li><a href="login.html"><b>LOGIN</b></a></li>
+                <li><a href="contact.html"><b></b></a></li> 
+                
+            </ul>
+        </nav>
+    </header>
+    <form action="javascript:void(0);" method="POST" onsubmit="app.Add()"> 
+        <input type="text" id="add-name" placeholder="New country">
+        <input type="submit" value="Add">
+    </form>
+    
+    <div id="spoiler" role="aria-hidden">
+        <form action="javascript:void(0);" method="POST" id="saveEdit">
+            <input type="text" id="edit-name">
+            <input type="submit" value="Edit" /> <a onclick="CloseInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+    
+    <p id="counter"></p>
+    
+    <table>
+        <tr>
+            <th>COMPLAINTS LIST</th>
+        </tr>
+        <tbody id="complaints">
+        </tbody>
+    </table>
+    <textarea style="width:200px; height: 60px;" id="area" placeholder="Write here"></textarea>
+    <br>
+    <button onclick="localStorage.removeItem('area');area.value=''">Clear</button>
+</div>
+</body>
+<script src="task.js"></script>
+</html>

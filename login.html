@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="task3.css">
+</head>
+<body>
+    <header>
+        
+        <nav>
+            <ul class="nav_links">
+                    <li><a href="task3.html"><b>HOME</b></a></li>
+                    <li><a href="complaints.html"><b>COMPLAINTS</b></a></li>
+                    <li><a href="status.html"><b>TRACK STATUS</b></a></li>
+                    <li><a href="policestation.html"><b>STATIONS</b></a></li>
+                    <li><a href="login.html"><b>LOGIN</b></a></li>
+                    <li><a href="contact.html"><b></b></a></li> 
+                
+            </ul>
+        </nav>
+    </header>
+    <div class="form">   
+        <form class="register-form">
+            <input class="button1" type="text" placeholder="input username here" id="textbox"></input><br>
+            <input class="button1" type="password" placeholder="input password here" id="textbox2"></input><br>
+            <input class="button1" id="logout" type="button" value="Login" onclick="document.getElementById('id01').style.display='block'; login();">
+            <input class="button1" type="button" value="sign up" onclick="signup()"></input> 
+            <br>
+            <p class="msg">Already Registered?<a href="#">Login</a></p>
+        </form>
+        <div id="id01" class="modal">
+            
+            <form class="modal-content animate" action="/action_page.php">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    
+                </div>
+                
+                <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname"  id="textbox3" required><br>
+                    
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" id="textbox4" required ><br>
+                    
+                    <button type="submit">Login</button>
+                    
+                    <span class="psw">Not Registered?<a href="#">Register</a></span>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script src="task.js"></script>
+    </html>
